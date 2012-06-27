@@ -13,7 +13,7 @@ Iframe常见问题，总结几点如下：
 
 3、  Iframe之间相互调用以及与页面之间的交互（基于jQuery实现）
 
-A、    主页面中监听left iframe事件，更改main iframe的内容:
+    A、 主页面中监听left iframe事件，更改main iframe的内容:
 
         jQuery(function($){
             var lpanel = $("#leftframe").contents().find('#leftmain');
@@ -24,7 +24,7 @@ A、    主页面中监听left iframe事件，更改main iframe的内容:
         });
 
 
-        B、leftiframe中的jQuery操作mainiframe的内容someID的内容
+    B、leftiframe中的jQuery操作mainiframe的内容someID的内容
 
         jQuery(function($){
             $('#left').click(function(){
