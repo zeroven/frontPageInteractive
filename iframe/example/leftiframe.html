@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="GBK">
+	<title>Left Iframe</title>
+	<style type="text/css" rel="stylesheet">
+		p{line-height:3;border:1px solid #FF7300;cursor:pointer;margin-top:22px;padding:0 12px;font-size:16px;font-weight:bold;}
+	</style>
+	</head>
+	<body>
+		<p id="left" class="panelbtn">left panel</p>
+		<p id="leftmain">left_main panel</p>
+		<script type="text/javascript" src="http://style.china.alibaba.com/fdevlib/js/fdev-v4/core/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			
+			jQuery(function($){
+				$('#left').click(function(){
+					// leftiframe中的jQuery操作mainiframe的内容someID的内容
+					var str = $("#mainframe",parent.document.body).contents().find("#main").html('left iframe中的jQuery操作main iframe中的内容!');
+				});
+			});
+		</script>
+	</body> 
+</html> 
