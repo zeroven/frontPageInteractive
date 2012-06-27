@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="GBK">
-	<style type="text/css" rel="stylesheet">
-		.leftIf{float:left;}
-		.main{float:right;}
-	</style>
-	</head>
-	<body> 
-		<Iframe src="leftiframe.html" id="leftframe" name="leftframe" height="100%" scrolling="no" frameborder="0" width="20%" class="leftIf" onLoad="iFrameHeight()"></iframe> 
-		<Iframe src="mainiframe.html" id="mainframe" name="mainframe" height="100%" scrolling="no" frameborder="0" width="79%" class="main" onLoad="javascript:dyniframesize('mainframe')" ></iframe>
-		<script type="text/javascript" src="http://style.china.alibaba.com/fdevlib/js/fdev-v4/core/jquery-1.7.2.js"></script>
-		<script type="text/javascript">
-			jQuery(function($){
-				var lpanel = $("#leftframe").contents().find('#leftmain');
-				//主页面中监听left iframe事件，更改main iframe的内容
-				lpanel.click(function(){
-					var str = $("#mainframe").contents().find("#main").html('主页面中监听left iframe事件，更改main iframe的内容!');//The content is changed from base page
-				});
-			});
-			
-			
-			/**
-			 * 完美自适应高度的解决方案 以mainframe为例
-			 * iFrame 自适应高度，在IE6/IE7/IE8/Firefox/Opera/Chrome/Safari通过测试。 TODO测试
-			 */
-			function dyniframesize(down) { 
-				var pTar = null; 
-				if (document.getElementById){ 
-					pTar = document.getElementById(down); 
-				}else{ 
-					eval('pTar = ' + down + ';'); 
-				} 
-				if (pTar && !window.opera){ 
-					//begin resizing iframe 
-					pTar.style.display="block" 
-					if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){ 
-						//ns6 syntax 
-						pTar.height = pTar.contentDocument.body.offsetHeight +20; 
-						pTar.width = pTar.contentDocument.body.scrollWidth+20; 
-					} 
-					else if (pTar.Document && pTar.Document.body.scrollHeight){ 
-						//ie5+ syntax 
-						pTar.height = pTar.Document.body.scrollHeight; 
-						pTar.width = pTar.Document.body.scrollWidth; 
-					} 
-				} 
-			}
-		</script>
-	</body> 
+    <head>
+    <meta charset="GBK">
+    <style type="text/css" rel="stylesheet">
+        .leftIf{float:left;}
+        .main{float:right;}
+    </style>
+    </head>
+    <body> 
+        <Iframe src="leftiframe.html" id="leftframe" name="leftframe" height="100%" scrolling="no" frameborder="0" width="20%" class="leftIf" onLoad="iFrameHeight()"></iframe> 
+        <Iframe src="mainiframe.html" id="mainframe" name="mainframe" height="100%" scrolling="no" frameborder="0" width="79%" class="main" onLoad="javascript:dyniframesize('mainframe')" ></iframe>
+        <script type="text/javascript" src="http://style.china.alibaba.com/fdevlib/js/fdev-v4/core/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+            jQuery(function($){
+                var lpanel = $("#leftframe").contents().find('#leftmain');
+                //主页面中监听left iframe事件，更改main iframe的内容
+                lpanel.click(function(){
+                    var str = $("#mainframe").contents().find("#main").html('主页面中监听left iframe事件，更改main iframe的内容!');//The content is changed from base page
+                });
+            });
+            
+            
+            /**
+             * 完美自适应高度的解决方案 以mainframe为例
+             * iFrame 自适应高度，在IE6/IE7/IE8/Firefox/Opera/Chrome/Safari通过测试。 TODO测试
+             */
+            function dyniframesize(down) { 
+                var pTar = null; 
+                if (document.getElementById){ 
+                    pTar = document.getElementById(down); 
+                }else{ 
+                    eval('pTar = ' + down + ';'); 
+                } 
+                if (pTar && !window.opera){ 
+                    //begin resizing iframe 
+                    pTar.style.display="block" 
+                    if (pTar.contentDocument && pTar.contentDocument.body.offsetHeight){ 
+                        //ns6 syntax 
+                        pTar.height = pTar.contentDocument.body.offsetHeight +20; 
+                        pTar.width = pTar.contentDocument.body.scrollWidth+20; 
+                    } 
+                    else if (pTar.Document && pTar.Document.body.scrollHeight){ 
+                        //ie5+ syntax 
+                        pTar.height = pTar.Document.body.scrollHeight; 
+                        pTar.width = pTar.Document.body.scrollWidth; 
+                    } 
+                } 
+            }
+        </script>
+    </body> 
 </html> 
