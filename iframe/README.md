@@ -5,13 +5,13 @@ iframe、JS之间的交互
 
 Iframe常见问题，总结几点如下：
 
-1、  iframe的透明背景: 使用 allowtransparency=true 需要IE5.5以上版本才支持
+1、  iframe的背景透明: 使用 allowtransparency=true 需要IE5.5以上版本才支持
     &lt;iframe allowtransparency=true src="page.htm" frameborder="0" &gt;&lt;/iframe&gt; 
     在iframe的页面page.htm中加 &lt;body style="background-color:transparent"&gt;
 
 2、  去掉滚动条：加scrolling=no 即可
 
-3、  Iframe之间相互调用以及与页面之间的交互（基于jQuery实现）
+3、  Iframe之间相互调用以及与主页面之间的交互（基于jQuery实现）
 
     A、 主页面中监听left iframe事件，更改main iframe的内容:
 
@@ -19,7 +19,7 @@ Iframe常见问题，总结几点如下：
             var lpanel = $("#leftframe").contents().find('#leftmain');
             //主页面中监听left iframe事件，更改main iframe的内容
             lpanel.click(function(){
-                var str = $("#mainframe").contents().find("#main").html('主页面中监听left iframe事件，更改main iframe的内容!');
+                var str = $("#mainframe").contents().find("#main").html('主页面中监听left iframe的事件，更改操作main iframe的内容!');
             });
         });
 
@@ -28,7 +28,7 @@ Iframe常见问题，总结几点如下：
 
         jQuery(function($){
             $('#left').click(function(){
-                var str = $("#mainframe",parent.document.body).contents().find("#main").html('left iframe中的jQuery操作main iframe中的内容!');
+                var str = $("#mainframe",parent.document.body).contents().find("#main").html('left iframe中使用jQuery操作main iframe中的内容!');
             });
         });
 
@@ -57,4 +57,4 @@ Iframe常见问题，总结几点如下：
         } 
     }
 
-其中 3、4可参见附件 可以直接运行案例(其中包含了jQuery1.7.2.js文件)
+其中 3、4参见附件 下载直接运行案例(包含了jQuery1.7.2.js文件)
